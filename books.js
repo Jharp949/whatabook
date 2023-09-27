@@ -23,7 +23,7 @@ db.createCollection("customers", {
             customerId: {
                 bsonType: "string"
             },
-			wishlist: {
+			wishlistItems: {
 				bsonType: "array"
 			}
 		}
@@ -109,14 +109,14 @@ john = {
     "firstName": "John",
     "lastName": "Smith",
     "customerId": "c001",
-    "wishlist":  [book1, book2, book6]
+    "wishlistItems":  [book1, book2, book6]
 }
 
 mary = {
     "firstName": "Mary",
     "lastName": "Miller",
     "customerId": "c002",
-    "wishlist": [book3, book4, book5]
+    "wishlistItems": [book3, book4, book5]
 }
 
 //Insert the customer documents
