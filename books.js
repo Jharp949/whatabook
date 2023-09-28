@@ -1,6 +1,6 @@
 /**
 	Title: books.js
-    Author: Kyle Hochdoerfer
+    Author: Kyle Hochdoerfer, James Harper
     Date: 27 September 2023
     Description: MongoDB Shell Scripts for the books and customers collections
  */
@@ -122,3 +122,9 @@ mary = {
 //Insert the customer documents
 db.customers.insertOne(john)
 db.customers.insertOne(mary)
+
+//Week 8 Queries
+console.log(db.books.find()); //Displays a list of books
+console.log(db.books.find({ "genre" : "Fantasy" })); //Lists books by genre
+console.log(db.books.find({ "author": "Michael Crichton" })); //Lists books by author
+console.log(db.books.find({ "bookId" : "1003" })); //Lists books bookId
