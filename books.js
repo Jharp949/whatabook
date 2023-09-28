@@ -124,7 +124,17 @@ db.customers.insertOne(john)
 db.customers.insertOne(mary)
 
 //Week 8 Queries
+console.log("Find list of all books:")
 console.log(db.books.find()); //Displays a list of books
+console.log("\n")
+
+console.log("Find by genre:\n")
 console.log(db.books.find({ "genre" : "Fantasy" })); //Lists books by genre
+console.log("\n")
+
+console.log("Find by author:")
 console.log(db.books.find({ "author": "Michael Crichton" })); //Lists books by author
+console.log("\n")
+
+console.log("Find by bookId:")
 console.log(db.books.find({ "bookId" : "1003" })); //Lists books bookId
