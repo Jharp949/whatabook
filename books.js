@@ -1,6 +1,6 @@
 /**
 	Title: books.js
-    Author: Kyle Hochdoerfer, James Harper
+    Author: Kyle Hochdoerfer, James Harper, Laurel Condon
     Date: 27 September 2023
     Description: MongoDB Shell Scripts for the books and customers collections
  */
