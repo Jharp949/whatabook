@@ -138,3 +138,52 @@ console.log("\n")
 
 console.log("Find by bookId:")
 console.log(db.books.find({ "bookId" : "1003" })); //Lists books bookId
+
+// Query to display a customer wishlist
+const customerIdToFind = "c001"; // Replace with desired customer
+const customer = db.customers.findOne({ customerId: customerIdToFind });
+
+if (customer) {
+	const wishlist = customer.wishlistItems;
+	print('Wishlist for Customer ID ${customerIdToFind');
+	wishlist.forEach((item, idex) => {
+		print('${index + 1}. Title: ${item.title}, Genre: ${item.genre}, Author: ${item.author}, BookId: ${item.bookId}');
+	});
+} else {
+	print('Customer with ID ${customerIdToFind} not found.');
+}
+
+// Query to add a book to a customer wishlist
+const customerIdToAdd = "c001"; // Replace with desired customer
+const bookToAdd = {
+	"title": "New Title",
+	"genre": "New Genre",
+	"author": "New Author",
+	"bookId": "newBookId"
+};
+
+const result = db.customers.updateOne(
+	{ customerId: customerIdToAdd },
+	{ $push: { wishlistItems: bookToAdd } }
+);
+
+if (result.modifiedCount === 1) {
+	print('Book added to the wishlist for Customer ID ${customerIdToAdd}');
+} else {
+	print('Customer with ID ${customerIdToAdd} not found or book not added to the wishlist.');
+}
+
+// Query to remove a book for a customer wishlist
+const customerIdToRemoveFrom = "c001"; // Replace with desired customer
+const bookIdToRemove = "1001"; // Replace with desired bookId
+
+const removeResult = db.customers.updateOne(
+	{ customerId: customerIdToRemoveFrom },
+	{ $pull: { wishlistItems: { bookId: bookIdToRemove } } }
+);
+
+if (removeResult.modfiedCount === 1) {
+	print('Book ${bookIdToRemove} removed from the wishlist');
+} else {
+	print('Customer ${customerIdToRemoveFrom} not found or book not removed');
+}
