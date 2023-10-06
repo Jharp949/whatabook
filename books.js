@@ -137,7 +137,8 @@ console.log(db.books.find({ "author": "Michael Crichton" })); //Lists books by a
 console.log("\n")
 
 console.log("Find by bookId:")
-console.log(db.books.find({ "bookId" : "1003" })); //Lists books bookId
+console.log(db.books.find({ "bookId" : "1003" })); //Lists books 
+console.log("\n")
 
 //Week 9
 const exampleId = "c001"; // Replace with desired customer
