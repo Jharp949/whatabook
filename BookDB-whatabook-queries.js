@@ -6,20 +6,25 @@
  */
 
 //Week 8 Queries
+
+//Query to display a list of books
 console.log("Find list of all books:")
-console.log(db.books.find()); //Displays a list of books
+console.log(db.books.find());
 console.log("\n")
 
+//Query to display books by genre
 console.log("Find by genre:\n")
-console.log(db.books.find({ "genre" : "Fantasy" })); //Lists books by genre
+console.log(db.books.find({ "genre" : "Fantasy" }));
 console.log("\n")
 
+//Query to display books by author
 console.log("Find by author:")
-console.log(db.books.find({ "author": "Michael Crichton" })); //Lists books by author
+console.log(db.books.find({ "author": "Michael Crichton" }));
 console.log("\n")
 
+//Query to display book by ID
 console.log("Find by bookId:")
-console.log(db.books.find({ "bookId" : "1003" })); //Lists books 
+console.log(db.books.find({ "bookId" : "1003" }));
 console.log("\n")
 
 //Week 9
